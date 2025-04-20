@@ -24,6 +24,6 @@ This is a smart chatbot designed to help users make their homes more energy-effi
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/rakesh1463/energy-advisor-chatbot.git
-cd energy-advisor-chatbot
+git clone https://github.com/rakesh1463/Energy-Advisor-Chatbot.git
+cd Energy-Advisor-Chatbot
 pip install -r requirements.txt

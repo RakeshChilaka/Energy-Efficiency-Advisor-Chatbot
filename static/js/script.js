@@ -1,17 +1,14 @@
 function displayMessage(message, sender) {
     const chatbox = document.getElementById("chatbox");
-    
-    // Create message container
+
     const messageDiv = document.createElement("div");
     messageDiv.className = "message " + sender;
 
-    // Add avatar based on sender
     const avatar = document.createElement("img");
     avatar.className = "avatar";
-    avatar.src = sender === "bot" ? "/static/images/bot.jpg" : "/static/images/guy.jpg"; // Use respective image paths
+    avatar.src = sender === "bot" ? "/static/images/bot.jpg" : "/static/images/guy.jpg";
     messageDiv.appendChild(avatar);
 
-    // Add message content
     const messageContent = document.createElement("div");
     messageContent.className = "message-content";
     messageContent.innerText = message;
@@ -21,28 +18,37 @@ function displayMessage(message, sender) {
     chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-
 function displayOptions(options) {
+    removeOptions();
+
     const chatbox = document.getElementById("chatbox");
-    // Clear previous options
-    const existingOptions = document.querySelectorAll(".button-option");
-    existingOptions.forEach(option => option.remove());
+    const optionContainer = document.createElement("div");
+    optionContainer.className = "button-group";
 
     options.forEach(option => {
         const button = document.createElement("button");
         button.className = "button-option";
         button.innerText = option;
-        button.onclick = function() {
+        button.onclick = function () {
+            removeOptions();
             document.getElementById("userInput").value = option;
             sendMessage();
         };
-        chatbox.appendChild(button);
+        optionContainer.appendChild(button);
     });
+
+    chatbox.appendChild(optionContainer);
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+function removeOptions() {
+    document.querySelectorAll(".button-option, .button-group").forEach(el => el.remove());
 }
 
 function sendMessage() {
-    const userInput = document.getElementById("userInput").value;
-    if (userInput.trim() === "") return;
+    const userInput = document.getElementById("userInput").value.trim();
+    if (userInput === "") return;
+
     displayMessage(userInput, "user");
     document.getElementById("userInput").value = "";
 
@@ -55,9 +61,8 @@ function sendMessage() {
     .then(data => {
         displayMessage(data.response, "bot");
 
-        // Check if bot response asks for appliance selection
-        if (data.response.includes("Which appliance")) {
-            displayOptions(["Air Conditioner", "Refrigerator","Fan","Television","Lights"]);
+        if (data.show_appliance_options) {
+            displayOptions(["Air Conditioner", "Refrigerator", "Fan", "Television", "Lights"]);
         }
     });
 }

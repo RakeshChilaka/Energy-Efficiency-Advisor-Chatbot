@@ -1,0 +1,20 @@
+#Defining intent_keywords for user text identification
+intent_keywords = {
+    "greetings": ["hi", "hello", "hola", "hey", "greetings", "welcome", "good day", "good morning", "good evening", "what's up"],
+    "farewell": ["bye", "goodbye", "see you", "farewell", "take care", "see you later", "good night", "adios", "later"],
+    "thank_you": ["thank you", "thanks", "appreciate", "grateful", "thankful", "much obliged", "cheers", "many thanks", "thanks a lot"],
+    "energy_saving": ["tips", "save", "help", "save energy", "energy saving", "reduce energy", "conserve energy", "utility bills", "switch off", "schedule", "power consumption", "electricity usage", "green living"],
+    "air_conditioner": ["air conditioner", "ac", "cooling", "filter", "temperature", "24°c", "closed", "windows", "doors", "room cool", "maintenance", "energy-efficient ac", "fan mode"],
+    "refrigerator": ["fridge", "refrigerator", "cold", "cool", "temperature", "3-5°c", "circulation", "overload", "food storage", "energy efficient fridge", "defrost", "door seal", "compressor"],
+    "fan": ["fan", "air", "speed", "moderate", "capacitor", "temperature", "outside temp", "oscillating", "ceiling fan", "energy saving fan", "smart fan"],
+    "television": ["tv", "television", "watch", "screen", "continuous", "breaks", "schedule", "smart tv", "led tv", "power saving mode", "brightness control"],
+    "lights": ["light", "lights", "bulb", "lamp", "led", "switch off", "brightness", "single light", "room", "usage", "fluorescent", "dimmer switch", "smart lighting"],
+    "washing_machine": ["washer", "washing machine", "laundry", "full loads", "cold water", "dryer", "air-dry", "clothes", "energy rating", "front load", "detergent efficiency"],
+    "heater": ["heater", "thermostat", "temperature", "heating", "programmable", "doors", "windows", "retain heat", "insulation", "radiator", "space heater", "heating bill"],
+    "appliance_selection": ["devices", "appliance", "appliances", "device", "select", "choose", "which appliance", "which device", "household items", "energy star", "buying guide"],
+    "smart_home": ["home automation", "smart devices", "smart thermostat", "voice control", "energy monitoring", "home assistant", "IoT", "automated energy saving"],
+    "solar_energy": ["solar panels", "renewable energy", "solar savings", "green power", "solar efficiency", "off-grid", "battery storage"],
+    "power_consumption": ["electricity usage", "power meter", "wattage", "high consumption", "energy bill", "consumption tracking", "reduce power"],
+    "battery_saving": ["battery life", "power saving mode", "charging habits", "extend battery", "low power mode", "energy efficient charging"],
+    "home_insulation": ["insulation", "home heat", "energy retention", "window seals", "thermal efficiency", "roof insulation", "eco-friendly insulation"],
+}
